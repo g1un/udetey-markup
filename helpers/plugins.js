@@ -39,6 +39,7 @@ let plugins = (isProd, src, dist) => {
                 },
                 apiOptions: {
                     cssImageRef: `~sprite${i}x.png`
+                    // cssImageRef: `../img/sprite/sprite${i}x.png`
                 }
             })
         );

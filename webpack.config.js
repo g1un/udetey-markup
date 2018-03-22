@@ -23,7 +23,7 @@ let config = (env, argv) => {
         },
 
         resolve: {
-            modules: ["node_modules", "spritesmith-generated"]
+            modules: ["node_modules", "spritesmith-generated", "src/img"]
         },
 
         module: {
@@ -51,10 +51,12 @@ let config = (env, argv) => {
                                 publicPath: '../'
                             }
                         },
+                        // 'test-loader',
                         {
                             loader: "css-loader",
                             options: {
-                                minimize: isProd
+                                minimize: isProd,
+                                // url: false
                             }
                         },
                         {
@@ -81,6 +83,7 @@ let config = (env, argv) => {
                             loader: 'pug-html-loader',
                             // query: {},
                             options: {
+                                pretty: true,
                                 data: {
                                     svg: svgObject
                                 }
@@ -96,11 +99,25 @@ let config = (env, argv) => {
                 },
                 {
                     test: /\.png$/,
+                    include: [ path.resolve(__dirname, 'spritesmith-generated') ],
                     use: [
                         {
                             loader: 'file-loader',
                             options: {
                                 name: 'img/sprite/[name].png'
+                            }
+                        }
+                    ]
+
+                },
+                {
+                    test: /\.(jpe?g|png|gif|svg)$/i,
+                    include: [ SRC_DIR + '/img' ],
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: 'img/[name].[ext]'
                             }
                         }
                     ]

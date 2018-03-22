@@ -2,6 +2,25 @@ mixin how()
     section.ud-how.ud-block-1
         .txt-title-2.ud-how__title Как все устроено
         ul.ud-how__list
-            each val in ['logo', 'phone', 'user']
+            -
+                var arr = [
+                    [
+                        '<span>Оформляешь абонемент</span> — получаешь зачетку и бейджик',
+                        'А в конце семестра — шапочку магистра и сертификат'
+                    ],
+                    [
+                        'По воскресеньям ходишь на занятия в <span>университеты города</span>',
+                        'В семестре от 10 до 13 занятий'
+                    ],
+                    [
+                        'Занятия ведут <span>настоящие ученые</span>',
+                        'Они бываю разными: лекционными, с опытами, на некоторым учат общаться или даже выступать на публике'
+                    ]
+                ];
+            each val, i in arr
                 li.ud-how__item
                     .ud-how__image
+                        +imgSrcset(`img/how-everything-works-${i + 1}`, 'png')
+                    p.ud-how
+                        |!{val[0]}
+                        i= val[1]

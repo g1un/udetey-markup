@@ -1,6 +1,6 @@
 .ud-how {
 
     &__image {
-        @include spriteX($hand);
+        @include spriteX($hand, $hand-2x, $hand-3x);
     }
 }

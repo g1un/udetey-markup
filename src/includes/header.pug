@@ -1,0 +1,17 @@
+mixin header()
+    header.ud-header
+        a(href='#').ud-header__logo
+            include ../svg/logo.svg
+        a(href='tel:+7 900 635-97-97').ud-header__tel
+            include ../svg/phone.svg
+            span +7 900 635-97-97
+        nav.ud-nav.ud-header__ud-nav
+            ul.ud-nav__list
+                each val in ['Наши ученые', 'Волонтерство']
+                    li.ud-nav__item
+                        a(href='#').txt-header-link.ud-nav__link= val
+        a(href='#').ud-btn.ud-header__btn Купить абонемент
+        a(href='#').txt-header-link.header__enter-link
+            span Вход
+            include ../svg/user.svg
+

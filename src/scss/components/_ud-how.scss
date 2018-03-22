@@ -1,0 +1,6 @@
+.ud-how {
+
+    &__image {
+        @include spriteX($hand);
+    }
+}

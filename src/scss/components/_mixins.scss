@@ -1,0 +1,43 @@
+@mixin spriteX($name1, $name2: false, $name3: false) {
+
+    @include sprite($name1);
+
+    @if $name2 {
+
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (   min--moz-device-pixel-ratio: 2),
+        only screen and (     -o-min-device-pixel-ratio: 2/1),
+        only screen and (        min-device-pixel-ratio: 2),
+        only screen and (                min-resolution: 192dpi),
+        only screen and (                min-resolution: 2dppx) {
+            @include sprite($name2);
+
+            background-size: nth($spritesheet-2, 1) / nth($name2, 5) * 100%;
+            background-position:
+                nth($name2, 3) / (nth($name2, 5) / nth($name1, 5))
+                nth($name2, 4) / (nth($name2, 5) / nth($name1, 5));
+        }
+    }
+
+    @if $name3 {
+
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 3),
+        only screen and (   min--moz-device-pixel-ratio: 3),
+        only screen and (     -o-min-device-pixel-ratio: 3/1),
+        only screen and (        min-device-pixel-ratio: 3),
+        only screen and (                min-resolution: 288dpi),
+        only screen and (                min-resolution: 3dppx) {
+            @include sprite($name3);
+
+            background-size: nth($spritesheet-3, 1) / nth($name3, 5) * 100%;
+            background-position:
+                nth($name3, 3) / (nth($name3, 5) / nth($name1, 5))
+                nth($name3, 4) / (nth($name3, 5) / nth($name1, 5));
+        }
+    }
+
+    width: nth($name1, 5) !important;
+    height: nth($name1, 6) !important;
+}

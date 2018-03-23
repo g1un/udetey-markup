@@ -1,17 +1,31 @@
 mixin header()
     header.ud-header
+        .ud-header__wrapper._sandwich
+            button.ud-header__sandwich.js-sandwich
+                span
         a(href='#').ud-header__logo
             include ../svg/logo.svg
         a(href='tel:+7 900 635-97-97').ud-header__tel
             include ../svg/phone.svg
             span +7 900 635-97-97
-        nav.ud-nav.ud-header__nav
+        nav.ud-nav.ud-header__nav.js-sandwich-menu
+            .ud-logo._md
+                include ../svg/logo-text.svg
             ul.ud-nav__list
                 each val in ['Наши ученые', 'Волонтерство']
                     li.ud-nav__item
                         a(href='#').txt-header-link.ud-nav__link= val
-        a(href='#').ud-btn.ud-header__btn Купить абонемент
-        a(href='#').txt-header-1.ud-header__enter-link
-            span Вход
-            include ../svg/user.svg
+                li.ud-nav__item._md-first
+                    a(href='#').ud-btn.ud-header__btn Купить абонемент
+            .ud-nav__md
+                a(href='tel:+7 900 635-97-97').ud-nav__md-tel +7 900 635-97-97
+                a(href='mailto:hello@udetey.ru').ud-nav__md-mail hello@udetey.ru
+                .ud-nav__md-links
+                    a(href='#') Согласие на обработку<br>персональных данных
+                    a(href='#') Пользовательское соглашение
+                    a(href='#') Условия пользования сайтом
+        .ud-header__wrapper._enter
+            a(href='#').txt-header-1.ud-header__enter-link
+                span Вход
+                include ../svg/user.svg
 

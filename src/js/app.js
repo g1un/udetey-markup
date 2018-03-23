@@ -3,4 +3,6 @@ import './../pages/main.pug';
 
 import './../scss/style.scss';
 
-console.log('bundle.js');
+import Sandwich from './components/sandwich';
+
+new Sandwich('.js-sandwich', '.js-sandwich-menu').init();

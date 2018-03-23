@@ -1,0 +1,10 @@
+.ud-logo {
+    display: none;
+
+    @include md() {
+        display: block;
+        margin-bottom: 30px;
+        line-height: 0;
+        text-align: center;
+    }
+}

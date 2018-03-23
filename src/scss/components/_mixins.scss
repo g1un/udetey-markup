@@ -63,3 +63,16 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
+
+//media
+@mixin md() {
+    @media (max-width: ($md - 1)+px) {
+        @content
+    }
+}
+
+@mixin sm() {
+    @media (max-width: ($sm - 1)+px) {
+        @content
+    }
+}

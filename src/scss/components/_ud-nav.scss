@@ -1,13 +1,35 @@
 .ud-nav {
-    margin-right: 13px;
+
+    @include md() {
+        display: none;
+        max-height: calc(100vh - 65px);
+        overflow: auto;
+
+        &._show {
+            display: block;
+        }
+    }
 
     &__list {
         display: flex;
         align-items: center;
+
+        @include md() {
+            margin-bottom: 15px;
+            flex-direction: column;
+        }
     }
 
     &__item {
         padding: 0 15px;
+
+        @include md() {
+            margin-bottom: 15px;
+
+            &._md-first {
+                order: -1;
+            }
+        }
     }
 
     &__link {
@@ -20,6 +42,46 @@
         &:hover,
         &:focus {
             opacity: .5;
+        }
+    }
+
+    &__md {
+        display: none;
+        padding-bottom: 35px;
+        flex-direction: column;
+        align-items: center;
+
+        @include md() {
+            display: flex;
+        }
+
+        &-tel,
+        &-mail {
+            margin-bottom: 15px;
+            @include r-700();
+            font-size: 25px;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        &-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            a {
+                opacity: 0.3;
+                @include r-400();
+                font-size: 15px;
+                line-height: 1.33;
+                color: #fff;
+                text-decoration: none;
+
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+            }
         }
     }
 }

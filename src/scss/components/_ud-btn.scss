@@ -1,0 +1,22 @@
+.ud-btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 12px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.5);
+    background: $shamrock;
+    @include rm-700();
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+
+    &._big {
+        padding: 12px;
+    }
+
+    &._blue {
+        background: $blue-violet;
+    }
+}

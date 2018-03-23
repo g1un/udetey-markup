@@ -1,0 +1,127 @@
+.presale-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 35px 40px 25px;
+    width: 960px;
+    height: 212px;
+    border-radius: 3px;
+    background: #4847b7 url('../img/presale-banner.svg') no-repeat right 43px top 16px;
+    background-size: 456px auto;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.7);
+    text-align: left;
+
+    &._anim {
+        margin-top: -252px;
+        margin-bottom: 45px;
+        animation: 2s presale-banner-appearing-banner 3s forwards;
+    }
+
+    &._eb-popup {
+        margin: 0;
+        padding: 40px 0 30px;
+        animation: none;
+        width: 320px;
+        height: auto;
+        align-items: center;
+        background-image: none;
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0 0 16px;
+        font-family: 'Roboto Mono', sans-serif;
+        font-size: 45px;
+        font-weight: bold;
+        line-height: 0.93;
+        letter-spacing: 2px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    &._eb-popup & {
+
+        &__title {
+            margin-bottom: 11px;
+            font-size: 32px;
+            line-height: 42px;
+            letter-spacing: 1.4px;
+        }
+    }
+
+    &__text {
+        flex: 1 1 auto;
+        margin: 0 0 10px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #fff;
+    }
+
+    &._eb-popup & {
+
+        &__text {
+            margin-bottom: 19px;
+        }
+    }
+
+    &__params {
+        font-size: 0;
+    }
+
+    &__param {
+        display: inline-block;
+        vertical-align: top;
+        font-family: 'Roboto Mono', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.19;
+        letter-spacing: 0.2px;
+        color: #fff;
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        &._blink {
+            animation: presale-banner-blink 2s infinite;
+        }
+        
+        span {
+            opacity: .4;
+        }
+    }
+
+    &._eb-popup & {
+
+        &__param {
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+@keyframes presale-banner-blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes presale-banner-appearing-banner {
+    100% {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

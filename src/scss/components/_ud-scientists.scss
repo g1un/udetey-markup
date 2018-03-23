@@ -1,0 +1,29 @@
+.ud-scientists {
+    padding: 30px;
+    margin: 80px auto 50px;
+
+    &__title {
+        margin: 0 0 30px;
+    }
+
+    &__list {
+        margin-bottom: 30px;
+        font-size: 0;
+        text-align: center;
+    }
+
+    &__item {
+        display: inline-block;
+        vertical-align: top;
+        width: 200px;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    &__text {
+        margin: 0 auto;
+        max-width: 960px;
+    }
+}

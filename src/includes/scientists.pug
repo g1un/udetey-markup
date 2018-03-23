@@ -1,0 +1,33 @@
+mixin scientists()
+    section.ud-block.ud-scientists
+        h2.txt-title-2.ud-scientists__title Наши ученые
+        ul.ud-scientists__list
+            -
+                var arr = [
+                    {
+                        imgSrc: 'img/yuri@2x.jpg',
+                        name: 'Юрий<br>Березкин',
+                        badge: 'Археолог'
+                    },
+                    {
+                        imgSrc: 'img/andrey@2x.jpg',
+                        name: 'Андрей<br>Серяков',
+                        badge: 'Физик'
+                    },
+                    {
+                        imgSrc: 'img/alexey@2x.jpg',
+                        name: 'Алексей<br>Казарницкий',
+                        badge: 'Морской Биоакустик'
+                    },
+                    {
+                        imgSrc: 'img/group-70@2x.jpg',
+                        name: 'Еще более<br>70 ученых',
+                        button: 'Посмотреть'
+                    }
+                ]
+            each val in arr
+                li.ud-scientists__item
+                    +person(val)
+        p.txt-text-1.ud-scientists__text
+            |Все занятия Университета детей проводят ученые, которые работают в университетах, научных и исследовательских центрах. Они исследуют клетки кожи, ядро Земли, звуковой сигнал китов и много чего еще. Мы помогаем ученым понятно и просто ответить на детский вопрос, развеять существующие мифы и сформировать научную картину мира.
+

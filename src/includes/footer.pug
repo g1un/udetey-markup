@@ -1,2 +1,54 @@
 mixin footer()
-    footer.footer
+    footer.ud-footer
+        .ud-footer__row
+            .ud-footer__contacts
+                .ud-footer__tel
+                    a(href='tel:+7 900 635-97-97') +7 900 635-97-97
+                    span Звоните на с 10 до 19
+                .ud-footer__mail
+                    a(href='mailto:hello@udetey.ru') hello@udetey.ru
+                    span Пишите по всем вопросам
+            .ud-social.ud-footer__social
+                -
+                    var socialArr = [
+                        {
+                            title: '_vk',
+                            name: 'Вконтакте',
+                            svg: svg.vk
+                        },
+                        {
+                            title: '_fb',
+                            name: 'Фейсбук',
+                            svg: svg.facebook
+                        },
+                        {
+                            title: '_ig',
+                            name: 'Инстаграм',
+                            svg: svg.instagram
+                        }
+                    ]
+                each val in socialArr
+                    a.ud-social__item(href='#', class=val.title)
+                        |!{val.svg}
+                        span= val.name
+        .ud-footer__row
+            .ud-footer__partners
+                .ud-footer__subtitle Партнеры
+                .ud-footer__list
+                    -
+                        var partnersArr = [svg.itmo, svg.eurounispb, svg.politech]
+                    each val in partnersArr
+                        a(href='#').ud-footer__partners-item
+                            |!{val}
+            .ud-footer__friends
+                .ud-footer__subtitle Друзья
+                .ud-footer__list
+                    -
+                        var partnersArr = [svg.losevo, svg['podpisnye-izdaniya']]
+                    each val in partnersArr
+                        a(href='#')
+                            |!{val}
+        .ud-footer__row
+            .ud-footer__docs
+                each val in ['Согласие на обработку  персональных данных', 'Пользовательское соглашение', 'Условия пользования сайтом']
+                    a(href='#').ud-footer__docs-item= val

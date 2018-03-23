@@ -1,0 +1,7 @@
+.ud-note {
+
+    &__icon {
+        margin: 0 auto 10px;
+        @include spriteX($hand, $hand-2x, $hand-3x);
+    }
+}

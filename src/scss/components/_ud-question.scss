@@ -1,0 +1,52 @@
+.ud-question {
+    padding: 40px 120px;
+    margin: 139px auto 80px;
+
+    &__header {
+        margin: -99px auto 20px;
+    }
+
+    &__stats {
+        margin-bottom: 20px;
+        font-size: 0;
+        text-align: center;
+
+        &-item {
+            display: inline-block;
+            vertical-align: top;
+            width: 200px;
+
+            &:not(:last-child) {
+                margin-right: 35px;
+            }
+        }
+
+        &-digit {
+            @include rm-700();
+            font-size: 70px;
+            text-align: center;
+            color: $blue-violet;
+            text-shadow: 0 1px 1px rgba(0,0,0,.3);
+        }
+
+        &-comment {
+            display: flex;
+            align-items: center;
+            min-height: 60px;
+            opacity: .8;
+            @include r-400();
+            font-size: 15px;
+            line-height: 1.33;
+            text-align: center;
+            color: #000;
+        }
+    }
+
+    &__text {
+        margin: 0 0 20px;
+    }
+
+    &__btn {
+        text-align: center;
+    }
+}

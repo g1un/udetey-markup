@@ -1,0 +1,43 @@
+.ud-accordeon {
+
+    &__item {
+        padding: 20px 30px 25px 60px;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+
+    &__btn {
+        position: relative;
+        padding: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+        @include r-400();
+        font-size: 26px;
+        line-height: 1.08;
+        color: #000;
+
+        &:hover,
+        &:focus {
+            border: none;
+            outline: none;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -30px;
+            transform: translateY(-50%);
+            @include spriteX($question, $question-2x, $question-3x);
+        }
+    }
+
+    &__content {
+        margin-top: 10px;
+        @include r-400();
+        font-size: 18px;
+        line-height: 1.33;
+        color: #000;
+    }
+}

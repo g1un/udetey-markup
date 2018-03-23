@@ -1,0 +1,25 @@
+.ud-nav {
+    margin-right: 13px;
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        padding: 0 15px;
+    }
+
+    &__link {
+        transition: opacity .25s;
+        font-family: 'Roboto Mono', sans-serif;
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            opacity: .5;
+        }
+    }
+}

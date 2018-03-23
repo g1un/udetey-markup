@@ -16,15 +16,26 @@ $hand-3x-offset-x: 0px;
 $hand-3x-offset-y: 0px;
 $hand-3x-width: 144px;
 $hand-3x-height: 144px;
-$hand-3x-total-width: 144px;
+$hand-3x-total-width: 216px;
 $hand-3x-total-height: 144px;
 $hand-3x-image: '~sprite3x.png';
-$hand-3x: (0px, 0px, 0px, 0px, 144px, 144px, 144px, 144px, '~sprite3x.png', 'hand@3x', );
-$spritesheet-width: 144px;
+$hand-3x: (0px, 0px, 0px, 0px, 144px, 144px, 216px, 144px, '~sprite3x.png', 'hand@3x', );
+$question-3x-name: 'question@3x';
+$question-3x-x: 144px;
+$question-3x-y: 0px;
+$question-3x-offset-x: -144px;
+$question-3x-offset-y: 0px;
+$question-3x-width: 72px;
+$question-3x-height: 72px;
+$question-3x-total-width: 216px;
+$question-3x-total-height: 144px;
+$question-3x-image: '~sprite3x.png';
+$question-3x: (144px, 0px, -144px, 0px, 72px, 72px, 216px, 144px, '~sprite3x.png', 'question@3x', );
+$spritesheet-width: 216px;
 $spritesheet-height: 144px;
 $spritesheet-image: '~sprite3x.png';
-$spritesheet-sprites: ($hand-3x, );
-$spritesheet: (144px, 144px, '~sprite3x.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($hand-3x, $question-3x, );
+$spritesheet: (216px, 144px, '~sprite3x.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

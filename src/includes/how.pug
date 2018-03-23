@@ -1,5 +1,5 @@
 mixin how()
-    section.ud-how.ud-block-1
+    section.ud-how.ud-block
         .txt-title-2.ud-how__title Как все устроено
         ul.ud-how__list
             -
@@ -21,6 +21,6 @@ mixin how()
                 li.ud-how__item
                     .ud-how__image
                         +imgSrcset(`img/how-everything-works-${i + 1}`, 'png')
-                    p.ud-how
-                        |!{val[0]}
+                    p.ud-how__text
+                        em.txt-text-1 !{val[0]}
                         i= val[1]

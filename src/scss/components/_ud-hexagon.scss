@@ -1,0 +1,48 @@
+.ud-hexagon {
+    position: relative;
+    width: 218px;
+    height: 125.86px;
+    margin: 62.93px 0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 154.15px;
+        height: 154.15px;
+        transform: scaleY(0.5774) rotate(-45deg);
+        background-color: inherit;
+        left: 31.9254px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    &:before {
+        //top: -88.7419px;
+        top: -77px;
+    }
+
+    &:after {
+        //bottom: -88.7419px;
+        bottom: -77px;
+    }
+
+    /*cover up extra shadows*/
+    &__helper {
+        display: block;
+        position: absolute;
+        top:0;
+        left: 0;
+        width:218px;
+        height:125.8624px;
+        z-index: 2;
+        border-radius: 1px;
+        background: inherit;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+}

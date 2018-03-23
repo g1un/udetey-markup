@@ -1,0 +1,6 @@
+mixin comment(img, ext, qoute, author)
+    .ud-comment
+        .ud-comment__image
+            +imgSrcset(img,ext)
+        p.txt-text-1.fs-i.ud-comment__quote= qoute
+        .ud-comment__author= author

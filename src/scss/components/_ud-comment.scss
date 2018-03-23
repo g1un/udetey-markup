@@ -1,0 +1,45 @@
+.ud-comment {
+    margin: 0 auto;
+    max-width: 1040px;
+
+    &__image {
+        margin: 0 auto 10px;
+        line-height: 0;
+        text-align: center;
+    }
+
+    &__quote {
+        margin: 0 auto;
+        max-width: 960px;
+        position: relative;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 25px;
+            height: 26px;
+            background: url('~comment-quotes.svg');
+        }
+
+        &:before {
+            left: -37px;
+            transform: translateY(-50%);
+        }
+
+        &:after {
+            right: -37px;
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+
+    &__author {
+        opacity: 0.4;
+        @include r-400();
+        font-size: 16px;
+        line-height: 1.88;
+        text-align: center;
+        color: #fff;
+    }
+}

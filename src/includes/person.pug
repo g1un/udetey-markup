@@ -1,0 +1,10 @@
+mixin person(obj)
+    .ud-person
+        .ud-person__image(style=`background-image: url('${obj.imgSrc}')`)
+            //img(src=obj.imgSrc)
+        .ud-person__footer
+            if obj.button
+                a(href='#').ud-btn._sm.ud-person__badge._btn= obj.button
+            else
+                .ud-person__badge= obj.badge
+            .ud-person__name !{obj.name}

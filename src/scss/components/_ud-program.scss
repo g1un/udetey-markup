@@ -1,0 +1,59 @@
+.ud-program {
+    margin: 0 auto 60px;
+    max-width: 1170px;
+
+    &__title {
+        margin: 0 auto 10px;
+        max-width: 960px;
+    }
+
+    &__text {
+        margin: 0 auto 32px;
+        max-width: 960px;
+    }
+
+    &__list {
+        padding: 29px 69px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background: url('~programs-bkg.svg') no-repeat center top;
+    }
+
+    &__item {
+
+        &:nth-child(1) {
+            background-color: #ff6200;
+        }
+
+        &:nth-child(2) {
+            background-color: #ffba01;
+        }
+
+        &:nth-child(3) {
+            background-color: #00b253;
+        }
+
+        &:nth-child(4) {
+            background-color: #3fa4ff;
+        }
+
+        h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        h4 {
+            margin: 25px 0 15px;
+        }
+
+        p {
+            margin: 0 20px;
+            @include rm-400();
+            font-size: 15px;
+            line-height: 1.33;
+            text-align: center;
+            color: #fff;
+        }
+    }
+}

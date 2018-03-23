@@ -1,6 +1,54 @@
 .ud-how {
+    padding: 30px;
+    margin-bottom: 80px;
+
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        flex: 1 1 33.33%;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
 
     &__image {
-        @include spriteX($hand, $hand-2x, $hand-3x);
+        margin-bottom: 10px;
+        height: 180px;
+        line-height: 0;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        text-align: center;
+
+        em {
+            font-style: normal;
+        }
+
+        span {
+            background: rgba(255,255,255,.2);
+        }
+
+        i {
+            display: block;
+            @include r-400();
+            font-size: 17px;
+            font-style: italic;
+            line-height: 1.29;
+            text-align: center;
+            color: #fff;
+        }
     }
 }

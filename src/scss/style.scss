@@ -1,11 +1,33 @@
-//BASE
-@import "components/typography";
+//EXTERNAL
 @import "components/sprite";
+
+//BASE
+@import "components/ud-variables";
 @import "components/mixins";
+@import "components/ud-typography";
 
 //GENERAL
-
+@import "components/general";
+@import "components/ud-btn";
+@import "components/ud-block";
+@import "components/ud-hexagon";
 
 //CUSTOM
-@import "components/mainpage";
+@import "components/ud-header";
+@import "components/ud-nav";
+@import "components/ud-banners";
+@import "components/presale-banner";
+@import "components/ud-intro";
+@import "components/ud-intro-ticket";
+@import "components/ud-note";
 @import "components/ud-how";
+@import "components/ud-program";
+@import "components/ud-comment";
+@import "components/ud-question";
+@import "components/ud-scientists";
+@import "components/ud-person";
+@import "components/ud-volunteers";
+@import "components/ud-answers";
+@import "components/ud-accordeon";
+@import "components/ud-footer";
+@import "components/ud-social";

@@ -1,0 +1,99 @@
+.ud-footer {
+    padding: 60px 0 80px;
+    background: #000;
+
+    &__row {
+        margin: 0 auto;
+        max-width: 1140px;
+        display: flex;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__contacts {
+        flex: 1 1 auto;
+        display: flex;
+    }
+
+    &__tel,
+    &__mail {
+
+        a {
+            display: block;
+            @include r-700();
+            font-size: 25px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        span {
+            display: block;
+            opacity: .3;
+            @include r-400();
+            font-size: 15px;
+            line-height: 1.47;
+            color: #fff;
+        }
+    }
+
+    &__tel {
+        margin-right: 30px;
+    }
+
+    &__subtitle {
+        margin-bottom: 15px;
+        opacity: 0.3;
+        border-bottom: 1px solid rgba(255,255,255,1);
+        @include r-400();
+        font-size: 15px;
+        line-height: 1.47;
+        color: #fff;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            &:not(:last-child) {
+                margin-right: 100px;
+            }
+        }
+    }
+
+    &__docs {
+        margin: 0 auto;
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+
+        &-item {
+            opacity: 0.3;
+            @include r-400();
+            font-size: 15px;
+            line-height: 1.33;
+            color: #fff;
+            text-decoration: none;
+
+            &:not(:last-child) {
+                margin-right: 20px;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: -10px;
+                    transform: translateY(-50%);
+                    width: 2px;
+                    height: 2px;
+                    border-radius: 1px;
+                    background: #fff;
+                }
+            }
+        }
+    }
+}

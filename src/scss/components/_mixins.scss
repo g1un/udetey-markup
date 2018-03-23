@@ -1,3 +1,4 @@
+//sprite backgrounds
 @mixin spriteX($name1, $name2: false, $name3: false) {
 
     @include sprite($name1);
@@ -40,4 +41,25 @@
 
     width: nth($name1, 5) !important;
     height: nth($name1, 6) !important;
+}
+
+//fonts
+@mixin rm-400 {
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
+}
+
+@mixin rm-700 {
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 700;
+}
+
+@mixin r-400 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+@mixin r-700 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }

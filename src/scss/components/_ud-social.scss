@@ -1,0 +1,37 @@
+.ud-social {
+    display: flex;
+
+    &__item {
+        display: block;
+        padding: 0 30px;
+        height: 50px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        @include r-400();
+        font-size: 23px;
+        color: #fff;
+        text-decoration: none;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        svg {
+            margin-right: 15px;
+        }
+        
+        &._vk {
+            background: #4a76a8;
+        }
+
+        &._fb {
+            background: #4266b2;
+        }
+
+        &._ig {
+            background: #fff;
+            color: #000;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+//titles
+.txt-title-1 {
+    @include rm-700();
+    font-size: 42px;
+    letter-spacing: -1px;
+    text-align: center;
+    color: #fff;
+}
+
+.txt-title-2 {
+    @include rm-700();
+    font-size: 40px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+}
+
+.txt-title-3 {
+    @include rm-700();
+    font-size: 40px;
+    line-height: 0.7;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+
+//texts
+.txt-header-1 {
+    @include rm-400();
+    font-size: 16px;
+    color: #fff;
+}
+
+.txt-text-1 {
+    @include r-400();
+    font-size: 21px;
+    line-height: 1.43;
+    text-align: center;
+    color: #fff;
+}
+
+//atomic text styles
+.fs-i {
+    font-style: italic;
+}
+
+.bg-w02 {
+    background: rgba(255,255,255,.2);
+}
+
+.tt-u {
+    text-transform: uppercase;
+}
+
+.c-b {
+    color: #000;
+}

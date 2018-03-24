@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
@@ -9,6 +10,10 @@ let plugins = (isProd, src, dist) => {
 
     //common for dev and prod plugins
     let pluginsArr = [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
         new CopyWebpackPlugin([
             {
                 from: SRC_DIR + '/img/',

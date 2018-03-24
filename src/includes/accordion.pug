@@ -1,0 +1,7 @@
+mixin accordion(arr)
+    .ud-accordion(class=attributes.class).js-accordion
+        each val, i in arr
+            .ud-accordion__item.js-accordion-item(class=`${i === 0 ? '_opened' : ''}`)
+                button.ud-accordion__btn.js-accordion-btn= val.title
+                .ud-accordion__content.js-accordion-content= val.content
+

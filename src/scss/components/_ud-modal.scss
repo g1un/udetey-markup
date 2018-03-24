@@ -1,0 +1,18 @@
+.ud-modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    overflow: auto;
+    background: rgba(#000,.25);
+}
+
+.ud-modal-wrapper {
+    min-height: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

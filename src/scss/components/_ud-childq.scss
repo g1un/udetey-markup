@@ -1,0 +1,48 @@
+.ud-childq {
+    padding: 30px 20px 15px;
+    max-width: 375px;
+    width: 100%;
+    position: relative;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.5);
+
+    &__title {
+        margin: 0 0 15px;
+        color: #000;
+    }
+
+    &__text-1 {
+        margin: 0 0 10px;
+        color: #000;
+    }
+
+    &__input {
+        margin: 0 0 10px;
+    }
+
+    &__text-2 {
+        margin: -6px 0 10px;
+        font-family: 'Arial', sans-serif;
+        font-size: 14px;
+        line-height: 1.29;
+        color: #000;
+    }
+
+    &__textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        height: 100px;
+    }
+
+    &__btn {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    &__submit {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}

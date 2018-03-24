@@ -12,6 +12,13 @@
         letter-spacing: normal;
         text-align: left;
     }
+
+    &._md {
+        font-size: 26px;
+        line-height: 1.23;
+        letter-spacing: normal;
+        text-align: left;
+    }
 }
 
 .txt-title-2 {
@@ -49,6 +56,12 @@
     color: #fff;
 
     @include md() {
+        font-size: 15px;
+        line-height: 1.4;
+        text-align: left;
+    }
+
+    &._md {
         font-size: 15px;
         line-height: 1.4;
         text-align: left;

@@ -54,6 +54,10 @@
         line-height: 1.33;
         color: #000;
 
+        a {
+            color: #000;
+        }
+
         @include md() {
             font-size: 15px;
             line-height: 1.4;

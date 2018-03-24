@@ -1,0 +1,17 @@
+mixin childq()
+    form(action='#', method='get').ud-childq
+        .ud-close.ud-childq__close.js-close
+        h2.txt-title-1._md.ud-childq__title Задать детский<br>вопрос
+        p.txt-text-1._md.ud-childq__text-1
+            |Если вы хотите, чтобы мы когда-то сделали занятие с вашим вопросом, оставьте его здесь
+        each val in [{label:'Имя', name: 'name'}, {label:'Возраст', name:'age'}]
+            .ud-form-control.ud-childq__input
+                label(for=val.name).ud-form-control__label= val.label
+                input(type='text', name=val.name, id=val.name).ud-input.ud-form-control__input
+        p.ud-childq__text-2
+            |Даже если вы взрослый, не притворяйтесь ребенком, напишите свой настоящий возраст
+        .ud-form-control.ud-childq__input
+            label(for='question').ud-form-control__label Ваш вопрос
+            textarea(name='question', id='question').ud-input._textarea.ud-form-control__input.ud-childq__textarea
+        .ud-childq__btn
+            input(type='submit', name='submit', id='submit', value='Задать вопрос').ud-btn.ud-childq__submit

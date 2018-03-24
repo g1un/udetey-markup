@@ -2,8 +2,8 @@
     border-radius: 3px;
 
     &__image {
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        padding-bottom: 100%;
         border-radius: 3px 3px 0 0;
         background-repeat: no-repeat;
         background-position: center center;
@@ -18,6 +18,7 @@
         position: absolute;
         padding: 0 10px;
         display: flex;
+        justify-content: center;
         align-items: center;
         height: 27px;
         left: 50%;
@@ -34,6 +35,17 @@
         text-transform: uppercase;
         white-space: nowrap;
 
+        @include md() {
+            margin: 0;
+            position: relative;
+            left: auto;
+            transform: none;
+            border-radius: 0;
+            font-size: 10px;
+            line-height: 2.2;
+            letter-spacing: 0.2px;
+        }
+
         &._btn {
             background-color: $shamrock;
             color: #fff;
@@ -46,11 +58,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: 0 0 3px 3px;
         background: #fff;
         @include r-400();
         font-size: 16px;
         line-height: 1.38;
         text-align: center;
         color: #000;
+
+        @include md() {
+            height: 50px;
+            font-size: 14px;
+            line-height: 1.29;
+        }
     }
 }

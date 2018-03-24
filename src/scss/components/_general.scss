@@ -21,3 +21,39 @@ ul {
 #mainpage {
     background: url('~mainpage-bg.jpg');
 }
+
+//display: none;
+.d-none {
+
+    &._xs {
+
+        &-minus {
+            @include xs() {
+                display: none;
+            }
+        }
+
+        &-plus {
+
+            @include after-xs() {
+                display: none;
+            }
+        }
+    }
+
+    &._md {
+
+        &-minus {
+            @include md() {
+                display: none;
+            }
+        }
+
+        &-plus {
+
+            @include after-md() {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,6 +1,11 @@
 .ud-volunteers {
-    max-width: 960px;
+    padding: 0 10px;
     margin: 50px auto 80px;
+    max-width: 980px;
+
+    @include sm() {
+        margin-bottom: 50px;
+    }
 
     &__image {
         margin: 0 auto 30px;
@@ -10,10 +15,18 @@
         img {
             max-width: 100%;
         }
+
+        @include sm() {
+            margin-bottom: 20px;
+        }
     }
 
     &__title {
         margin: 0 0 10px;
+
+        @include sm() {
+            margin-bottom: 5px;
+        }
     }
 
     &__text {

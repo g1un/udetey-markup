@@ -3,29 +3,31 @@ mixin program()
         .txt-title-2.ud-program__title Программа весеннего семестра
         p.txt-text-1.ud-program__text
             |Программа занятий #[span.bg-w02 зависит только от года рождения] студента, но в направлении «Векторы» вы можете выбрать курс по той или иной научной области.
-        ul.ud-program__list
-            -
-                var arr = [
-                    {
-                        title: 'Энергия',
-                        text: 'Программа для детей 2009-2010 года рождения'
-                    },
-                    {
-                        title: 'Импульс',
-                        text: 'Программа для детей 2009-2010 года рождения'
-                    },
-                    {
-                        title: 'Динамика',
-                        text: 'Программа для детей 2005-2006 года рождения'
-                    },
-                    {
-                        title: 'Вектор',
-                        text: 'Программа для детей 2003-2004 года рождения'
-                    }
-                ]
-            each val in arr
-                li.ud-hexagon.ud-program__item
-                    span.ud-hexagon__helper
-                    .ud-hexagon__content
-                        h4.txt-title-3.tt-u= val.title
-                        p= val.text
+        .ud-program__wrapper
+            ul.ud-program__list
+                -
+                    var arr = [
+                        {
+                            title: 'Энергия',
+                            text: 'Программа для детей 2009-2010 года рождения'
+                        },
+                        {
+                            title: 'Импульс',
+                            text: 'Программа для детей 2009-2010 года рождения'
+                        },
+                        {
+                            title: 'Динамика',
+                            text: 'Программа для детей 2005-2006 года рождения'
+                        },
+                        {
+                            title: 'Вектор',
+                            text: 'Программа для детей 2003-2004 года рождения'
+                        }
+                    ]
+                each val in arr
+                    li.ud-program__item
+                        .ud-hexagon.ud-program__hexagon
+                            span.ud-hexagon__helper
+                            .ud-hexagon__content
+                                h4.tt-u= val.title
+                                p= val.text

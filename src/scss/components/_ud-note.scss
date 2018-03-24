@@ -4,4 +4,13 @@
         margin: 0 auto 10px;
         @include spriteX($hand, $hand-2x, $hand-3x);
     }
+
+    &__text {
+        margin: 0;
+        font-style: italic;
+
+        @include md() {
+            font-style: normal;
+        }
+    }
 }

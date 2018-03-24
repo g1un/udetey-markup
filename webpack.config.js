@@ -126,7 +126,13 @@ let config = (env, argv) => {
             ]
         },
 
-        plugins: plugins(isProd, SRC_DIR, DIST_DIR)
+        plugins: plugins(isProd, SRC_DIR, DIST_DIR),
+
+        devServer: {
+            historyApiFallback: true,
+            disableHostCheck: true,
+            host: '0.0.0.0'
+        }
     }
 };
 

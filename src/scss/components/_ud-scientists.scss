@@ -1,24 +1,81 @@
 .ud-scientists {
-    padding: 30px;
+    padding: 0 40px;
     margin: 80px auto 50px;
+
+    @include sm() {
+        margin: 50px 0;
+        padding: 0;
+    }
+
+    &__block {
+        padding: 30px 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+
+        @include sm() {
+            padding: 30px 10px;
+        }
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        max-width: 960px;
+    }
 
     &__title {
         margin: 0 0 30px;
+
+        @include sm() {
+            margin-bottom: 15px;
+        }
     }
 
     &__list {
         margin-bottom: 30px;
         font-size: 0;
         text-align: center;
+
+        @include sm() {
+            margin-bottom: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
 
     &__item {
         display: inline-block;
         vertical-align: top;
-        width: 200px;
 
         &:not(:last-child) {
             margin-right: 20px;
+
+            @include sm() {
+                margin-right: 0;
+            }
+        }
+
+        @include sm() {
+            margin: 0 0 20px;
+            flex: 1 1 50%;
+            max-width: 50%;
+
+            &:nth-child(2n+1) {
+                padding-right: 10px;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            &:nth-child(2n) {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    &__person {
+        width: 200px;
+
+        @include md() {
+            width: 140px;
         }
     }
 

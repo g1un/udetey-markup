@@ -4,4 +4,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    @include md() {
+        display: none;
+    }
 }

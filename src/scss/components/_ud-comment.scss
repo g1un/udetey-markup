@@ -1,17 +1,37 @@
 .ud-comment {
+    padding: 0 40px;
     margin: 0 auto;
     max-width: 1040px;
+
+    &._last {
+        margin-bottom: 50px;
+    }
+
+    @include md() {
+        padding: 0 10px;
+    }
 
     &__image {
         margin: 0 auto 10px;
         line-height: 0;
         text-align: center;
+
+        @include md() {
+            margin-bottom: 15px;
+        }
     }
 
     &__quote {
         margin: 0 auto;
         max-width: 960px;
         position: relative;
+        font-style: italic;
+
+        @include md() {
+            margin-bottom: 10px;
+            font-style: normal;
+            text-align: center;
+        }
 
         &:before,
         &:after {
@@ -21,6 +41,10 @@
             width: 25px;
             height: 26px;
             background: url('~comment-quotes.svg');
+
+            @include md() {
+                display: none;
+            }
         }
 
         &:before {
@@ -41,5 +65,10 @@
         line-height: 1.88;
         text-align: center;
         color: #fff;
+
+        @include md() {
+            font-size: 15px;
+            line-height: 1.4;
+        }
     }
 }

@@ -65,14 +65,45 @@
 }
 
 //media
+//lg
+@mixin xlg() {
+    @media (max-width: ($xlg - 1)+px) {
+        @content
+    }
+}
+@mixin lg() {
+    @media (max-width: ($lg - 1)+px) {
+        @content
+    }
+}
+
+//md
 @mixin md() {
     @media (max-width: ($md - 1)+px) {
         @content
     }
 }
+@mixin after-md() {
+    @media (min-width: $md+px) {
+        @content
+    }
+}
 
+//sm
 @mixin sm() {
     @media (max-width: ($sm - 1)+px) {
+        @content
+    }
+}
+
+//xs
+@mixin xs() {
+    @media (max-width: $xs+px) {
+        @content
+    }
+}
+@mixin after-xs() {
+    @media (min-width: ($xs + 1)+px) {
         @content
     }
 }

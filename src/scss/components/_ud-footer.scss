@@ -2,6 +2,10 @@
     padding: 60px 0 80px;
     background: #000;
 
+    @include lg() {
+        padding: 43px 10px 100px;
+    }
+
     &__row {
         margin: 0 auto;
         max-width: 1140px;
@@ -10,16 +14,34 @@
 
         &:not(:last-child) {
             margin-bottom: 30px;
+
+            @include lg() {
+                margin-bottom: 35px;
+            }
+        }
+
+        @include lg() {
+            flex-direction: column;
         }
     }
 
     &__contacts {
         flex: 1 1 auto;
         display: flex;
+
+        @include lg() {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
     }
 
     &__tel,
     &__mail {
+
+        @include lg() {
+            text-align: center;
+        }
 
         a {
             display: block;
@@ -41,6 +63,11 @@
 
     &__tel {
         margin-right: 30px;
+
+        @include lg() {
+            margin-right: 0;
+            margin-bottom: 32px;
+        }
     }
 
     &__subtitle {
@@ -51,15 +78,80 @@
         font-size: 15px;
         line-height: 1.47;
         color: #fff;
+
+        @include lg() {
+            text-align: center;
+        }
+    }
+
+    &__partners {
+
+        @include lg() {
+            margin-bottom: 15px;
+        }
     }
 
     &__list {
         display: flex;
         justify-content: space-between;
 
+        @include lg() {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         a {
             &:not(:last-child) {
                 margin-right: 100px;
+
+                @include lg() {
+                    margin-right: 0;
+                }
+            }
+
+            @include lg() {
+                margin-bottom: 20px;
+                padding: 0 15px;
+
+                &._itmo {
+
+                    svg {
+                        width: 86px;
+                        height: 35px;
+                    }
+                }
+
+                &._eurounispb {
+
+                    svg {
+                        width: 118px;
+                        height: 33px;
+                    }
+                }
+
+                &._politech {
+
+                    svg {
+                        width: 131px;
+                        height: 35px;
+                    }
+                }
+
+                &._losevo {
+
+                    svg {
+                        width: 81px;
+                        height: 35px;
+                    }
+                }
+
+                &._podpisnye-izdaniya {
+
+                    svg {
+                        width: 188px;
+                        height: 35px;
+                    }
+                }
             }
         }
     }
@@ -70,6 +162,12 @@
         display: flex;
         justify-content: center;
 
+        @include lg() {
+            padding-top: 0;
+            flex-direction: column;
+            align-items: center;
+        }
+
         &-item {
             opacity: 0.3;
             @include r-400();
@@ -77,6 +175,7 @@
             line-height: 1.33;
             color: #fff;
             text-decoration: none;
+            text-align: center;
 
             &:not(:last-child) {
                 margin-right: 20px;
@@ -92,6 +191,15 @@
                     height: 2px;
                     border-radius: 1px;
                     background: #fff;
+                }
+
+                @include lg() {
+                    margin-right: 0;
+                    margin-bottom: 20px;
+
+                    &:after {
+                        display: none;
+                    }
                 }
             }
         }

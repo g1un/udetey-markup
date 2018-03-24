@@ -1,7 +1,8 @@
 mixin volunteers()
     section.ud-volunteers
         .ud-volunteers__image
-            +imgSrcset('img/volunteers','png')
+            +imgSrcset('img/volunteers','png').d-none._xs-minus
+            img(src='img/volunteers-sm@2x.jpg').d-none._xs-plus
         h2.txt-title-2.ud-volunteers__title Что если я взрослый и хочу к вам?
         p.txt-text-1.ud-volunteers__text
             |Очень много взрослых грустят, что в их детстве не было Университета детей. Как вы знаете, мы не пускаем родителей наших студентов на занятия, но если вы все-таки хотите узнать ответы на многие детские вопросы — приходите к нам волонтером, у вас будет возможность попасть на самые интересные занятия

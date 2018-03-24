@@ -1,7 +1,7 @@
 .ud-logo {
     display: none;
 
-    @include md() {
+    @include lg() {
         display: block;
         margin-bottom: 30px;
         line-height: 0;

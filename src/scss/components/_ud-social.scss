@@ -1,24 +1,35 @@
 .ud-social {
     display: flex;
 
+    @include lg() {
+        flex-direction: column;
+        align-items: center;
+    }
+
     &__item {
-        display: block;
         padding: 0 30px;
         height: 50px;
-        border-radius: 25px;
         display: flex;
         align-items: center;
+        border-radius: 25px;
         @include r-400();
         font-size: 23px;
         color: #fff;
         text-decoration: none;
 
-        &:not(:last-child) {
-            margin-right: 20px;
+        @include lg() {
+            justify-content: center;
+            width: 300px;
+            position: relative;
         }
 
-        svg {
-            margin-right: 15px;
+        &:not(:last-child) {
+            margin-right: 20px;
+
+            @include lg() {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
         }
         
         &._vk {
@@ -32,6 +43,23 @@
         &._ig {
             background: #fff;
             color: #000;
+        }
+    }
+
+    &__icon {
+        margin-right: 15px;
+
+        @include lg() {
+            min-width: 40px;
+            margin-right: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 30px;
+
+            svg {
+                margin: -1px auto;
+            }
         }
     }
 }

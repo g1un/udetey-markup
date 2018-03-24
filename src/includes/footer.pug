@@ -29,25 +29,47 @@ mixin footer()
                     ]
                 each val in socialArr
                     a.ud-social__item(href='#', class=val.title)
-                        |!{val.svg}
+                        i.ud-icon.ud-social__icon !{val.svg}
                         span= val.name
         .ud-footer__row
             .ud-footer__partners
                 .ud-footer__subtitle Партнеры
                 .ud-footer__list
                     -
-                        var partnersArr = [svg.itmo, svg.eurounispb, svg.politech]
+                        var partnersArr = [
+                            {
+                                _class: '_itmo',
+                                src: svg.itmo
+                            },
+                            {
+                                _class: '_eurounispb',
+                                src: svg.eurounispb
+                            },
+                            {
+                                _class: '_politech',
+                                src: svg.politech
+                            }
+                        ]
                     each val in partnersArr
-                        a(href='#').ud-footer__partners-item
-                            |!{val}
+                        a(href='#', class=val._class)
+                            |!{val.src}
             .ud-footer__friends
                 .ud-footer__subtitle Друзья
                 .ud-footer__list
                     -
-                        var partnersArr = [svg.losevo, svg['podpisnye-izdaniya']]
+                        var partnersArr = [
+                            {
+                                _class: '_losevo',
+                                src: svg.losevo
+                            },
+                            {
+                                _class: '_podpisnye-izdaniya',
+                                src: svg['podpisnye-izdaniya']
+                            }
+                        ]
                     each val in partnersArr
-                        a(href='#')
-                            |!{val}
+                        a(href='#', class=val._class)
+                            | !{val.src}
         .ud-footer__row
             .ud-footer__docs
                 each val in ['Согласие на обработку  персональных данных', 'Пользовательское соглашение', 'Условия пользования сайтом']

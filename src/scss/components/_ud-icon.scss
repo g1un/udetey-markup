@@ -1,0 +1,13 @@
+.ud-icon {
+    display: block;
+    padding: 1px;
+    overflow: hidden;
+    line-height: 0;
+    font-style: normal;
+
+    svg {
+        display: block;
+        margin: -1px;
+        overflow: visible;
+    }
+}

@@ -3,6 +3,10 @@
     &__item {
         padding: 20px 30px 25px 60px;
         border-top: 1px solid rgba(0,0,0,.1);
+
+        @include md() {
+            padding: 15px 0;
+        }
     }
 
     &__btn {
@@ -16,6 +20,7 @@
         font-size: 26px;
         line-height: 1.08;
         color: #000;
+        text-align: left;
 
         &:hover,
         &:focus {
@@ -26,10 +31,19 @@
         &:before {
             content: '';
             position: absolute;
-            top: 50%;
+            top: 3px;
             left: -30px;
-            transform: translateY(-50%);
             @include spriteX($question, $question-2x, $question-3x);
+        }
+
+        @include md() {
+            padding-left: 30px;
+            font-size: 20px;
+            line-height: 1.3;
+
+            &:before {
+                left: 0;
+            }
         }
     }
 
@@ -39,5 +53,10 @@
         font-size: 18px;
         line-height: 1.33;
         color: #000;
+
+        @include md() {
+            font-size: 15px;
+            line-height: 1.4;
+        }
     }
 }

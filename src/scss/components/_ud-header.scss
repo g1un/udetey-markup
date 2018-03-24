@@ -10,7 +10,7 @@
     align-items: center;
     background: url('~mainpage-bg.jpg');
 
-    @include md() {
+    @include lg() {
         padding: 0 10px;
         justify-content: space-between;
         background: #000;
@@ -30,7 +30,7 @@
 
     &__wrapper {
 
-        @include md() {
+        @include lg() {
             flex: 1 1 30%;
 
             &._enter {
@@ -42,7 +42,7 @@
         &._sandwich {
             display: none;
 
-            @include md() {
+            @include lg() {
                 display: block;
             }
         }
@@ -89,7 +89,7 @@
         margin-right: 33px;
         line-height: 0;
 
-        @include md() {
+        @include lg() {
             margin: 0;
             width: 30px;
             overflow: hidden;
@@ -102,7 +102,7 @@
         align-items: center;
         text-decoration: none;
 
-        @include md() {
+        @include lg() {
             display: none;
         }
 
@@ -120,7 +120,7 @@
     &__nav {
         margin-right: 25px;
 
-        @include md() {
+        @include lg() {
             padding: 15px 0 0;
             margin: 0;
             position: fixed;

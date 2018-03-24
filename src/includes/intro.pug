@@ -1,17 +1,18 @@
 mixin intro()
     section.ud-intro
         .ud-intro__image
-            img(src='img/ud-intro.png' srcset='img/ud-intro@2x.png 2x, img/ud-intro@3x.png 3x')
-        .txt-title-1.ud-intro__title Университет детей в Санкт-Петербурге
-        .txt-text-1.ud-intro__text
+            +imgSrcset('img/ud-intro', 'png').d-none._xs-minus
+            +imgSrcset('img/ud-intro-xs', 'png').d-none._xs-plus
+        h1.txt-title-1.ud-intro__title Университет детей в Санкт-Петербурге
+        p.txt-text-1.ud-intro__text
             |Университет детей рассказывает об окружающем мире доступным научном языком.  У нас нет экзаменов, а все остальное — почти по-настоящему. Лекции, воркшопы  и общеразвивающие занятия ведут ученые, преподаватели вузов и эксперты из разных научных областей. Университет детей расширяет кругозор, развивает критическое мышление  и позволяет детям чувствовать себя равными даже с самыми большими учеными.
         .ud-intro-ticket.ud-intro__ticket
-            a(href='#').ud-btn.ud-intro-ticket__btn Купить абонемент
+            a(href='#').ud-btn._big.ud-intro-ticket__btn Купить абонемент
             .ud-intro-ticket__side._right Абонемент на год 12000 <br>На семестр — 7000
             .ud-intro-ticket__side Осенний семестр длится <br> с 10 сентября до 24 декабря
         .ud-note.ud-intro__note
             .ud-note__icon
-            p.txt-text-1.fs-i.ud-note__text
+            p.txt-text-1.ud-note__text
                 |Формат «детского университета» популярен в Европе, а начался в Германии, где преподаватели каждого вуза на выходных проводят занятия для детей.
 
 

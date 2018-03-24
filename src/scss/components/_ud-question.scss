@@ -1,24 +1,37 @@
 .ud-question {
-    padding: 40px 120px;
+    padding: 0 40px;
     margin: 139px auto 80px;
 
+    @include md() {
+        display: none;
+    }
+
+    &__block {
+        padding: 40px 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        max-width: 980px;
+    }
+
     &__header {
-        margin: -99px auto 20px;
+        margin: -99px 0 20px;
+        display: flex;
+        justify-content: center;
     }
 
     &__stats {
-        margin-bottom: 20px;
-        font-size: 0;
-        text-align: center;
+        margin: 0 auto 20px;
+        max-width: 905px;
+        display: flex;
+        justify-content: space-between;
 
         &-item {
-            display: inline-block;
-            vertical-align: top;
-            width: 200px;
-
-            &:not(:last-child) {
-                margin-right: 35px;
-            }
+            flex: 1 1 200px;
+            max-width: 200px;
         }
 
         &-digit {

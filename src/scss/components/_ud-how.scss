@@ -1,13 +1,49 @@
 .ud-how {
-    padding: 30px;
+    padding: 0 40px;
     margin-bottom: 80px;
 
+    @include sm() {
+        padding: 0;
+        margin-bottom: 50px;
+    }
+
+    &__block {
+        padding: 30px;
+
+        @include sm() {
+            padding: 20px 10px 30px;
+        }
+    }
+
+    &__up-image {
+        display: none;
+
+        @include sm() {
+            display: block;
+            margin-bottom: 20px;
+            line-height: 0;
+            text-align: center;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
     &__title {
-        margin-bottom: 20px;
+        margin: 0 0 20px;
+
+        @include sm() {
+            margin-bottom: 13px;
+        }
     }
 
     &__list {
         display: flex;
+
+        @include sm() {
+            display: block;
+        }
     }
 
     &__item {
@@ -15,6 +51,15 @@
 
         &:not(:last-child) {
             margin-right: 30px;
+        }
+
+        @include sm() {
+            padding: 15px 0;
+            border-top: 1px solid rgba(255,255,255,.2);
+
+            &:last-child {
+                border-bottom: 1px solid rgba(255,255,255,.2);
+            }
         }
     }
 
@@ -24,8 +69,17 @@
         line-height: 0;
         text-align: center;
 
+        @include xlg() {
+            height: 14.0625vw;
+        }
+
+        @include sm() {
+            display: none;
+        }
+
         img {
             max-width: 100%;
+            max-height: 100%;
         }
     }
 
@@ -34,7 +88,19 @@
         text-align: center;
 
         em {
+            @extend .txt-text-1;
             font-style: normal;
+
+            @include md() {
+                font-size: 19px;
+                line-height: 1.37;
+                color: #fff;
+            }
+
+            @include sm() {
+                display: block;
+                text-align: left;
+            }
         }
 
         span {
@@ -49,6 +115,15 @@
             line-height: 1.29;
             text-align: center;
             color: #fff;
+
+            @include md() {
+                font-size: 15px;
+                line-height: 1.47;
+            }
+
+            @include sm() {
+                text-align: left;
+            }
         }
     }
 }

@@ -5,6 +5,12 @@
     margin: 62.93px 0;
     box-shadow: 0 0 20px rgba(0,0,0,0.6);
 
+    @include md() {
+        width: 141px;
+        height: 81.41px;
+        margin: 40.70px 0;
+    }
+
     &:before,
     &:after {
         content: "";
@@ -16,16 +22,30 @@
         background-color: inherit;
         left: 31.9254px;
         box-shadow: 0 0 20px rgba(0,0,0,0.6);
+
+        @include md() {
+            width: 99.70px;
+            height: 99.70px;
+            left: 20.6490px;
+        }
     }
 
     &:before {
         //top: -88.7419px;
         top: -77px;
+
+        @include md() {
+            top: -49.8510px;
+        }
     }
 
     &:after {
         //bottom: -88.7419px;
         bottom: -77px;
+
+        @include md() {
+            bottom: -49.8510px;
+        }
     }
 
     /*cover up extra shadows*/
@@ -39,6 +59,11 @@
         z-index: 2;
         border-radius: 1px;
         background: inherit;
+
+        @include md() {
+            width:141px;
+            height:81.4064px;
+        }
     }
 
     &__content {

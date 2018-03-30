@@ -23,6 +23,18 @@
         }
     }
 
+    &._transparent {
+        background: transparent;
+
+        @include lg() {
+            background: #000;
+        }
+    }
+
+    &._absolute {
+        position: absolute;
+    }
+
     @include lg() {
         padding: 0 10px;
         justify-content: space-between;

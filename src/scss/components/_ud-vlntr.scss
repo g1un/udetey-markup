@@ -1,0 +1,117 @@
+.ud-vlntr {
+    @extend .txt-text-2;
+
+    &__header {
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 498px;
+        background-image: url('~volunteers-header.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        @include md() {
+            height: 249px;
+        }
+    }
+
+    &__title {
+        padding: 0 10px 30px;
+        flex: 1 1 760px;
+        max-width: 760px;
+    }
+
+    &__main {
+        margin: 0 auto 82px;
+        padding: 0 10px;
+        max-width: 860px;
+    }
+
+    &__desc {
+        margin-bottom: 30px;
+    }
+
+    &__p {
+        margin: 0 auto;
+        max-width: 740px;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__block {
+        margin-bottom: 20px;
+        padding: 30px 0;
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+        padding: 0 10px;
+        max-width: 760px;
+    }
+
+    &__subtitle {
+        margin-bottom: 10px;
+
+        &._vol {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list {
+        margin: 30px auto 50px;
+        max-width: 740px;
+    }
+
+    &__person {
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__card {
+        margin: 0 auto;
+        max-width: 740px;
+
+        &-image {
+            margin: 0 0 40px;
+            line-height: 0;
+            text-align: center;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        &-list {
+            margin: 20px 0 0;
+        }
+
+        &-item {
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            b, span, a {
+                display: block;
+            }
+
+            b {
+                margin-bottom: 5px;
+            }
+
+            em {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 10px;
+                background-color: $dolly;
+                font-style: normal;
+            }
+        }
+    }
+}

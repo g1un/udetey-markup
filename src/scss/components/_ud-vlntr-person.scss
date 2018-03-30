@@ -1,0 +1,22 @@
+.ud-vlntr-person {
+
+    &__image {
+        margin-bottom: 10px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    &__name {
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    &__info {
+        margin: 0;
+    }
+}

@@ -1,4 +1,4 @@
-mixin doctype(bodyClass, profileHeader)
+mixin doctype(bodyClass, profileHeader, headerClass)
     doctype html
     html
         head
@@ -12,7 +12,7 @@ mixin doctype(bodyClass, profileHeader)
             if profileHeader
                 +profile-header()
             else
-                +header()
+                +header(headerClass)
             block
             +footer()
             script(src='js/main.js')

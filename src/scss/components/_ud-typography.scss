@@ -41,6 +41,27 @@
     }
 }
 
+.txt-title-3 {
+    margin: 0;
+    @include rm-700();
+    font-size: 46px;
+    line-height: 1.09;
+    color: #fff;
+
+    @include md() {
+        font-size: 28px;
+        line-height: 1.21;
+    }
+}
+
+.txt-title-4 {
+    margin: 0;
+    @include r-700();
+    font-size: 24px;
+    line-height: 1.25;
+    color: #000;
+}
+
 //texts
 .txt-header-1 {
     @include rm-400();
@@ -66,6 +87,19 @@
         font-size: 15px;
         line-height: 1.4;
         text-align: left;
+    }
+}
+
+.txt-text-2 {
+    margin: 0;
+    @include r-400();
+    font-size: 18px;
+    line-height: 1.44;
+    color: #000;
+
+    a {
+        color: $shamrock;
+        text-decoration: none;
     }
 }
 

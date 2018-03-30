@@ -9,6 +9,17 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
+$arrow-right-2x-name: 'arrow-right@2x';
+$arrow-right-2x-x: 96px;
+$arrow-right-2x-y: 48px;
+$arrow-right-2x-offset-x: -96px;
+$arrow-right-2x-offset-y: -48px;
+$arrow-right-2x-width: 31px;
+$arrow-right-2x-height: 26px;
+$arrow-right-2x-total-width: 144px;
+$arrow-right-2x-total-height: 96px;
+$arrow-right-2x-image: '~sprite2x.png';
+$arrow-right-2x: (96px, 48px, -96px, -48px, 31px, 26px, 144px, 96px, '~sprite2x.png', 'arrow-right@2x', );
 $hand-2x-name: 'hand@2x';
 $hand-2x-x: 0px;
 $hand-2x-y: 0px;
@@ -34,7 +45,7 @@ $question-2x: (96px, 0px, -96px, 0px, 48px, 48px, 144px, 96px, '~sprite2x.png', 
 $spritesheet-width: 144px;
 $spritesheet-height: 96px;
 $spritesheet-image: '~sprite2x.png';
-$spritesheet-sprites: ($hand-2x, $question-2x, );
+$spritesheet-sprites: ($arrow-right-2x, $hand-2x, $question-2x, );
 $spritesheet: (144px, 96px, '~sprite2x.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables

@@ -9,6 +9,7 @@
 
     &__btn {
         margin: 0 20px;
+        white-space: nowrap;
 
         @include md() {
             margin: 0 0 15px;
@@ -16,6 +17,7 @@
     }
 
     &__side {
+        flex: 1 1 100%;
         opacity: .3;
         @include r-400();
         font-size: 17px;

@@ -43,6 +43,40 @@
     height: nth($name1, 6) !important;
 }
 
+//background mixin
+@mixin backgroundImage($name1, $name2: false, $name3: false) {
+
+    background-image: url($name1);
+
+    @if $name2 {
+
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (   min--moz-device-pixel-ratio: 2),
+        only screen and (     -o-min-device-pixel-ratio: 2/1),
+        only screen and (        min-device-pixel-ratio: 2),
+        only screen and (                min-resolution: 192dpi),
+        only screen and (                min-resolution: 2dppx) {
+
+            background-image: url($name2);
+        }
+    }
+
+    @if $name3 {
+
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 3),
+        only screen and (   min--moz-device-pixel-ratio: 3),
+        only screen and (     -o-min-device-pixel-ratio: 3/1),
+        only screen and (        min-device-pixel-ratio: 3),
+        only screen and (                min-resolution: 288dpi),
+        only screen and (                min-resolution: 3dppx) {
+
+            background-image: url($name3);
+        }
+    }
+}
+
 //fonts
 @mixin rm-400 {
     font-family: 'Roboto Mono', sans-serif;
@@ -73,6 +107,11 @@
 }
 @mixin lg() {
     @media (max-width: ($lg - 1)+px) {
+        @content
+    }
+}
+@mixin after-lg() {
+    @media (max-width: $lg+px) {
         @content
     }
 }

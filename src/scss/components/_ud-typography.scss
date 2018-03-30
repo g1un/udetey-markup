@@ -45,6 +45,7 @@
 .txt-header-1 {
     @include rm-400();
     font-size: 16px;
+    line-height: normal;
     color: #fff;
 }
 

@@ -1,4 +1,8 @@
 .ud-nav {
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    background: transparent;
 
     @include lg() {
         display: none;
@@ -7,6 +11,7 @@
 
         &._show {
             display: block;
+            background: #2c2c2c;
         }
     }
 
@@ -33,15 +38,18 @@
     }
 
     &__link {
+        padding: 0;
         transition: opacity .25s;
         font-family: 'Roboto Mono', sans-serif;
         font-size: 16px;
+        line-height: normal;
         color: #fff;
         text-decoration: none;
 
         &:hover,
         &:focus {
             opacity: .5;
+            background-color: transparent;
         }
     }
 

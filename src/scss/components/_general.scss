@@ -9,17 +9,17 @@ body {
 }
 
 body {
-    padding-top: 65px;
+
+    &.index {
+        padding-top: 65px;
+        background: url('~mainpage-bg.jpg');
+    }
 }
 
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-#mainpage {
-    background: url('~mainpage-bg.jpg');
 }
 
 //display: none;

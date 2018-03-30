@@ -1,48 +1,78 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
-const plugins = require('./helpers/plugins');
-const includesLoader = require('./helpers/includesLoader');
+const plugins = require('./webpack/plugins');
+const includesLoader = require('./webpack/includesLoader');
 
 const SRC_DIR = path.resolve(__dirname, 'src');
 const DIST_DIR = path.resolve(__dirname, 'dist');
+// const DIST_DIR = path.resolve(__dirname, 'public');
+// const HTML_DIR = path.resolve(__dirname, 'public/html');
 
-const svgObject = require('./helpers/svgObject')(SRC_DIR + '/svg');
+const svgObject = require('./webpack/svgObject')(SRC_DIR + '/svg');
 
 let config = (env, argv) => {
     let isProd = argv.mode === 'production';
+    // let buildHtml = env ? env.html : false;
+
+    // let app = (!isProd || buildHtml) ? 'dev.app.js' : 'app.js';
+    // let TARGET_DIR = buildHtml ? HTML_DIR : DIST_DIR;
 
     return {
-        entry: SRC_DIR + '/js/app.js',
+        entry: {
+            // app: SRC_DIR + `/js/${app}`,
+            app: SRC_DIR + `/js/dev.app.js`,
+        },
         output: {
+            // path: TARGET_DIR,
             path: DIST_DIR,
-            filename: 'js/bundle.js'
+            filename: 'js/main.js'
         },
 
         resolveLoader: {
-            modules: ['node_modules', './helpers/', './']
+            modules: ['node_modules', './webpack/']
         },
 
         resolve: {
-            modules: ["node_modules", "spritesmith-generated", "src/img"]
+            modules: [
+                "node_modules",
+                "src/spritesmith-generated",
+                "src/img",
+                "src/fonts"
+                // "resources/assets/spritesmith-generated",
+                // "resources/assets/img",
+                // "resources/assets/legacy/img",
+                // "resources/assets/fonts"
+            ]
         },
 
         module: {
             rules: [
                 {
+                    test: require.resolve('jquery'),
+                    use: [
+                        {
+                            loader: 'expose-loader',
+                            options: 'jQuery'
+                        }
+                    ]
+                },
+
+                {
                     test: /\.js$/,
                     include: SRC_DIR,
+                    // exclude: SRC_DIR + '/legacy/js/legacy.js',
                     loader: 'babel-loader',
-                    query: {
+                    options: {
                         presets: ['es2015']
                     }
                 },
                 {
-                    test: /\.scss$/,
+                    test: /\.(scss|css)$/,
                     use: [
                         {
                             loader: "file-loader",
                             options: {
-                                name: 'css/style.css'
+                                name: 'css/main.css'
                             }
                         },
                         {
@@ -51,12 +81,13 @@ let config = (env, argv) => {
                                 publicPath: '../'
                             }
                         },
-                        // 'test-loader',
                         {
                             loader: "css-loader",
                             options: {
                                 minimize: isProd,
-                                // url: false
+                                // alias: {
+                                //     "../fonts/roboto": path.resolve(__dirname, "node_modules/materialize-css/dist/fonts/roboto")
+                                // }
                             }
                         },
                         {
@@ -81,7 +112,6 @@ let config = (env, argv) => {
                         },
                         {
                             loader: 'pug-html-loader',
-                            // query: {},
                             options: {
                                 pretty: true,
                                 data: {
@@ -99,7 +129,7 @@ let config = (env, argv) => {
                 },
                 {
                     test: /\.png$/,
-                    include: [ path.resolve(__dirname, 'spritesmith-generated') ],
+                    include: [ SRC_DIR + '/spritesmith-generated' ],
                     use: [
                         {
                             loader: 'file-loader',
@@ -112,12 +142,26 @@ let config = (env, argv) => {
                 },
                 {
                     test: /\.(jpe?g|png|gif|svg)$/i,
-                    include: [ SRC_DIR + '/img' ],
+                    include: [ SRC_DIR + '/img'/*, SRC_DIR + '/legacy/img'*/ ],
                     use: [
                         {
                             loader: 'file-loader',
                             options: {
                                 name: 'img/[name].[ext]'
+                            }
+                        }
+                    ]
+
+                },
+                {
+                    test: /\.(eot|svg|ttf|woff|woff2)$/i,
+                    // include: [ SRC_DIR + '/fonts', path.resolve(__dirname, 'node_modules/materialize-css/dist/fonts/roboto') ],
+                    include: [ SRC_DIR + '/fonts' ],
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: 'fonts/[name].[ext]'
                             }
                         }
                     ]
@@ -129,9 +173,12 @@ let config = (env, argv) => {
         plugins: plugins(isProd, SRC_DIR, DIST_DIR),
 
         devServer: {
-            historyApiFallback: true,
             disableHostCheck: true,
             host: '0.0.0.0'
+        },
+        watchOptions: {
+            poll: 1000,
+            aggregateTimeout: 1000
         }
     }
 };

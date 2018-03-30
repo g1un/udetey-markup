@@ -6,19 +6,36 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 let plugins = (isProd, src, dist) => {
     let SRC_DIR = src;
+    // let TARGET_DIR = target;
     let DIST_DIR = dist;
 
     //common for dev and prod plugins
     let pluginsArr = [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-        }),
         new CopyWebpackPlugin([
             {
                 from: SRC_DIR + '/img/',
                 to: DIST_DIR + '/img/'
-            }
+            },
+            // {
+            //     from: SRC_DIR + '/svg/',
+            //     to: DIST_DIR + '/img/svg/'
+            // },
+            // {
+            //     from: SRC_DIR + '/legacy/img/',
+            //     to: DIST_DIR + '/img/'
+            // },
+            // {
+            //     from: SRC_DIR + '/legacy/admin-extras/css/',
+            //     to: DIST_DIR + '/css/'
+            // },
+            {
+                from: SRC_DIR + '/fonts/',
+                to: DIST_DIR + '/fonts/',
+            },
+            // {
+            //     from: SRC_DIR + '/legacy/admin-extras/js/',
+            //     to: DIST_DIR + '/js/',
+            // }
         ]),
         new ImageminPlugin({
             test: /\.(jpe?g|png|gif|svg)$/i,
@@ -35,12 +52,12 @@ let plugins = (isProd, src, dist) => {
         pluginsArr.push(
             new SpritesmithPlugin({
                 src: {
-                    cwd: path.resolve(__dirname, `../src/sprite/${i}x`),
+                    cwd: SRC_DIR + `/sprite/${i}x`,
                     glob: '*.png'
                 },
                 target: {
-                    image: path.resolve(__dirname, `../spritesmith-generated/sprite${i}x.png`),
-                    css: path.resolve(__dirname, `../src/scss/components/sprite/_sprite${i}x.scss`)
+                    image: SRC_DIR + `/spritesmith-generated/sprite${i}x.png`,
+                    css: SRC_DIR + `/scss/components/sprite/_sprite${i}x.scss`
                 },
                 apiOptions: {
                     cssImageRef: `~sprite${i}x.png`

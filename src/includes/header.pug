@@ -12,9 +12,9 @@ mixin header()
             .ud-logo._md
                 include ../svg/logo-text.svg
             ul.ud-nav__list
-                each val in ['Наши ученые', 'Волонтерство']
+                each val in [{title:'Наши ученые', href:'#scientists'}, {title:'Волонтерство', href:'#volunteers'}]
                     li.ud-nav__item
-                        a(href='#').txt-header-link.ud-nav__link= val
+                        a(href=val.href).txt-header-link.ud-nav__link.js-link= val.title
                 li.ud-nav__item._md-first
                     a(href='#').ud-btn.ud-header__btn Купить абонемент
             .ud-nav__md

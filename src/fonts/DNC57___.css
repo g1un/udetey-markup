@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "DINCondensed-Regular";
+    src: url("DNC57___.eot");
+    src: url("DNC57___.eot?#iefix") format("embedded-opentype"),
+         url("DNC57___.woff2") format("woff2"),
+         url("DNC57___.woff") format("woff"),
+         url("DNC57___.ttf") format("ttf"),
+         url("DNC57___.svg#DINCondensed-Regular") format("svg");
+    font-style: normal;
+    font-weight: regular;
+}

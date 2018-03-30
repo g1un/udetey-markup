@@ -1,4 +1,4 @@
-mixin doctype(bodyId)
+mixin doctype(bodyClass, profileHeader)
     doctype html
     html
         head
@@ -7,9 +7,12 @@ mixin doctype(bodyId)
             meta(name="viewport", content="width=device-width")
             link(href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext",rel="stylesheet")
             link(href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&amp;subset=cyrillic-ext", rel="stylesheet")
-            link(rel='stylesheet', type='text/css', href='css/style.css')
-        body(id=bodyId)
-            +header()
+            link(rel='stylesheet', type='text/css', href='css/main.css')
+        body(class=bodyClass)
+            if profileHeader
+                +profile-header()
+            else
+                +header()
             block
             +footer()
-            script(src='js/bundle.js')
+            script(src='js/main.js')

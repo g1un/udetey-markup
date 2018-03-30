@@ -1,0 +1,14 @@
+mixin profile-header()
+    header.ud-header._profile
+        .ud-header__side
+            a(href='#').ud-header__logo
+                include ../svg/logo.svg
+            a(href='tel:+7 900 635-97-97').ud-header__tel
+                include ../svg/phone.svg
+                span +7 900 635-97-97
+        ul.ud-header__tabs
+            each val, i in ['Абонементы', 'Расписание']
+                li.ud-header__tab
+                    a.txt-header-1.ud-header__tab-link(href='#', class=`${i === 0 ? '_active' : ''}`)= val
+        .ud-header__side._right
+            button.ud-header__menu(style="background-image: url('img/alexey@2x.jpg');")

@@ -7,6 +7,7 @@ import Sandwich from './components/sandwich';
 import Accordion from './components/accordion';
 import Question from './components/question';
 import Anchors from './components/anchors';
+import Modal from './components/modal';
 
 //LEGACY
 // import './../legacy/js/legacy.js';
@@ -16,3 +17,4 @@ new Sandwich('.js-sandwich', '.js-sandwich-menu').init();
 new Accordion().init();
 new Question().init();
 new Anchors().init();
+new Modal().init();

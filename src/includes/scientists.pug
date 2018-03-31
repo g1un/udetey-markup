@@ -1,34 +1,13 @@
-mixin scientists()
-    section.ud-scientists#scientists
+mixin scientists(title, arr, noText)
+    section.ud-scientists(class=attributes.class, id=attributes.id).js-modal-btn-container
         .ud-block.ud-scientists__block
             .ud-scientists__wrapper
-                h2.txt-title-2.ud-scientists__title Наши ученые
+                h2.txt-title-2.ud-scientists__title= title
                 ul.ud-scientists__list
-                    -
-                        var arr = [
-                            {
-                                imgSrc: 'img/yuri@2x.jpg',
-                                name: 'Юрий<br>Березкин',
-                                badge: 'Археолог'
-                            },
-                            {
-                                imgSrc: 'img/andrey@2x.jpg',
-                                name: 'Андрей<br>Серяков',
-                                badge: 'Физик'
-                            },
-                            {
-                                imgSrc: 'img/alexey@2x.jpg',
-                                name: 'Алексей<br>Казарницкий',
-                                badge: 'Морской Биоакустик'
-                            },
-                            {
-                                imgSrc: 'img/group-70@2x.jpg',
-                                name: 'Еще более<br>70 ученых',
-                                button: 'Посмотреть'
-                            }
-                        ]
-                    each val in arr
+                    each val, i in arr
                         li.ud-scientists__item
-                            +person(val).ud-scientists__person
-                p.txt-text-1.ud-scientists__text
-                    |Все занятия Университета детей проводят ученые, которые работают в университетах, научных и исследовательских центрах. Они исследуют клетки кожи, ядро Земли, звуковой сигнал китов и много чего еще. Мы помогаем ученым понятно и просто ответить на детский вопрос, развеять существующие мифы и сформировать научную картину мира.
+                            +person(val, i).ud-scientists__person
+                if !noText
+                    p.txt-text-1.ud-scientists__text
+                        |Все занятия Университета детей проводят ученые, которые работают в университетах, научных и исследовательских центрах. Они исследуют клетки кожи, ядро Земли, звуковой сигнал китов и много чего еще. Мы помогаем ученым понятно и просто ответить на детский вопрос, развеять существующие мифы и сформировать научную картину мира.
+        +scntsts-modal()

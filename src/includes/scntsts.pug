@@ -1,0 +1,77 @@
+mixin scntsts()
+    section.ud-scntsts
+        header.ud-scntsts__header
+            .ud-scntsts__wrapper
+                h1.txt-title-3.ud-scntsts__title Наши ученые
+                p.ud-scntsts__subtitle
+                    |Университет детей рассказывает об окружающем мире доступным научном языком. У нас нет экзаменов, а все остальное — почти по-настоящему. Лекции, воркшопы и общеразвивающие занятия ведут ученые, преподаватели вузов и эксперты из разных научных областей
+                .ud-tabs.ud-scntsts__tabs
+                    -
+                        var tabs = [
+                            {
+                                title: 'Естественные',
+                                _class: '_hippie-blue',
+                                course: 'natural'
+                            },
+                            {
+                                title: 'Гуманитарные',
+                                _class: '_blue-violet',
+                                course: 'humanitarian'
+                            },
+                            {
+                                title: 'Формальные',
+                                _class: '_puerto-rico',
+                                course: 'formal'
+                            },
+                            {
+                                title: 'Технические',
+                                _class: '_orange',
+                                course: 'technic'
+                            },
+                            {
+                                title: 'Общественные',
+                                _class: '_saffron',
+                                course: 'social'
+                            }
+                        ]
+                    each val in tabs
+                        a.ud-tabs__item(href=`#${val.course}`, class=val._class).js-link= val.title
+        .ud-scntsts__main
+            each val in tabs
+                +scientists(
+                    'Естественные науки',
+                    [
+                        {
+                            imgSrc: 'img/yuri@2x.jpg',
+                            name: 'Юрий<br>Березкин',
+                            badge: 'Археолог'
+                        },
+                        {
+                            imgSrc: 'img/andrey@2x.jpg',
+                            name: 'Андрей<br>Серяков',
+                            badge: 'Физик'
+                        },
+                        {
+                            imgSrc: 'img/alexey@2x.jpg',
+                            name: 'Алексей<br>Казарницкий',
+                            badge: 'Морской Биоакустик'
+                        },
+                        {
+                            imgSrc: 'img/yuri@2x.jpg',
+                            name: 'Юрий<br>Березкин',
+                            badge: 'Археолог'
+                        },
+                        {
+                            imgSrc: 'img/andrey@2x.jpg',
+                            name: 'Андрей<br>Серяков',
+                            badge: 'Физик'
+                        },
+                        {
+                            imgSrc: 'img/alexey@2x.jpg',
+                            name: 'Алексей<br>Казарницкий',
+                            badge: 'Морской Биоакустик'
+                        }
+                    ],
+                    true
+                ).ud-scntsts__course(class=val._class, id=val.course)._page
+        +scntsts-modal()

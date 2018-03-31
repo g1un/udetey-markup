@@ -1,0 +1,38 @@
+.ud-scntsts-modal {
+    flex: 1 1 900px;
+    display: flex;
+    padding: 40px 10px;
+    width: 900px;
+    max-width: 100%;
+
+    &__wrapper {
+        flex: 1 1 800px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    &__image {
+        margin: 0 auto 10px;
+        max-width: 99px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+        line-height: 0;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    &__name,
+    &__job {
+        display: inline-block;
+        vertical-align: top;
+    }
+}

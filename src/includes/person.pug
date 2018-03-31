@@ -1,10 +1,11 @@
-mixin person(obj)
-    .ud-person(class=attributes.class)
-        .ud-person__image(style=`background-image: url('${obj.imgSrc}')`)
-            //img(src=obj.imgSrc)
+mixin person(obj, i)
+    button.ud-person(class=attributes.class, data-modal='scntsts').js-modal-btn.js-modal-btn-container
+        .ud-person__image(style=`background-image: url('${obj.imgSrc}')`, data-modal-input='bgi')
         .ud-person__footer
             if obj.button
                 a(href='#').ud-btn._sm.ud-person__badge._btn= obj.button
             else
-                .ud-person__badge= obj.badge
-            .ud-person__name !{obj.name}
+                .ud-person__badge(data-modal-input='job')= obj.badge
+            .ud-person__name(data-modal-input='name') !{obj.name}
+            .ud-person__desc(style='display: none;', data-modal-input='desc')
+                |#{i}Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.

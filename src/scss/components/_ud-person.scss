@@ -1,5 +1,15 @@
 .ud-person {
     border-radius: 3px;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        border: none;
+        outline: none;
+    }
 
     &__image {
         width: 100%;

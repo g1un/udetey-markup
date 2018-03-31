@@ -1,0 +1,47 @@
+.ud-tabs {
+
+    &__item {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 10px;
+        padding: 6px 15px;
+        border-radius: 2px;
+        border: none;
+        outline: none;
+        @include rm-700();
+        font-size: 21px;
+        color: #fff;
+        text-decoration: none;
+        text-shadow: 0 1px 1px rgba(0,0,0,.3);
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        &:hover,
+        &:focus {
+            outline: none;
+            border: none;
+        }
+
+        &._hippie-blue {
+            background: $hippie-blue;
+        }
+
+        &._blue-violet {
+            background: $blue-violet;
+        }
+
+        &._puerto-rico {
+            background: $puerto-rico;
+        }
+
+        &._orange {
+            background: $orange;
+        }
+
+        &._saffron {
+            background: $saffron;
+        }
+    }
+}

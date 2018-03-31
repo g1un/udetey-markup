@@ -1,0 +1,35 @@
+.ud-scntsts {
+
+    &__wrapper {
+        margin: 0 auto;
+        padding: 0 10px;
+        max-width: 760px;
+    }
+
+    &__header {
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 577px;
+        background: url('http://placebeard.it/1280x577') no-repeat center center;
+        background-size: cover;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
+        margin-bottom: 16px;
+        @include r-400();
+        font-size: 20px;
+        line-height: 1.3;
+        color: #fff;
+
+        @include md() {
+            font-size: 15px;
+            line-height: 1.4;
+        }
+    }
+}

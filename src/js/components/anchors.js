@@ -1,14 +1,18 @@
-import Sandwich from './sandwich';
-
 export default class Anchors {
     constructor() {
         this.links = document.querySelectorAll('.js-link');
-        this.headerHeight = 65;
         this.$body = $('html, body');
     }
 
     init() {
         if(this.links.length <= 0) return;
+
+        this.header = document.querySelector('.js-header');
+        if(window.getComputedStyle(this.header).position === 'fixed') {
+            this.headerHeight = 65;
+        } else {
+            this.headerHeight = 0;
+        }
 
         [].forEach.call(this.links, (link) => this.initLink(link));
     }

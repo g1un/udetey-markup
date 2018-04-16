@@ -108,6 +108,25 @@
 
     &__hexagon {
 
+        &-age {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            @include rm-400();
+            font-size: 15px;
+            line-height: 1.33;
+            text-align: center;
+            color: #fff;
+
+            @include md() {
+                top: -15px;
+                font-size: 12px;
+                line-height: 1.33;
+            }
+        }
+
         h4, p {
             margin: 0;
             padding: 0;

@@ -8,4 +8,26 @@
         line-height: 1.43;
         color: #9b9b9b;
     }
+
+    &._error & {
+
+        &__input {
+            border-color: $carnation;
+        }
+    }
+
+    &__error {
+        display: none;
+    }
+
+    &._error & {
+
+        &__error {
+            display: block;
+            @include r-400();
+            font-size: 14px;
+            line-height: 1.29;
+            color: $carnation;
+        }
+    }
 }

@@ -1,14 +1,10 @@
 .ud-header {
     padding: 0 40px;
     height: 65px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
+    position: relative;
     display: flex;
     align-items: center;
-    background: url('~mainpage-bg.jpg');
+    background: transparent;
 
     &._profile {
         height: auto;
@@ -21,18 +17,6 @@
         &:after {
             display: none;
         }
-    }
-
-    &._transparent {
-        background: transparent;
-
-        @include lg() {
-            background: #000;
-        }
-    }
-
-    &._absolute {
-        position: absolute;
     }
 
     @include lg() {

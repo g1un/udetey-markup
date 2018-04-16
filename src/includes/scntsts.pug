@@ -9,35 +9,25 @@ mixin scntsts()
                     -
                         var tabs = [
                             {
-                                title: 'Естественные',
-                                _class: '_hippie-blue',
-                                course: 'natural'
+                                title: 'Естественные'
                             },
                             {
-                                title: 'Гуманитарные',
-                                _class: '_blue-violet',
-                                course: 'humanitarian'
+                                title: 'Гуманитарные'
                             },
                             {
-                                title: 'Формальные',
-                                _class: '_puerto-rico',
-                                course: 'formal'
+                                title: 'Формальные'
                             },
                             {
-                                title: 'Технические',
-                                _class: '_orange',
-                                course: 'technic'
+                                title: 'Технические'
                             },
                             {
-                                title: 'Общественные',
-                                _class: '_saffron',
-                                course: 'social'
+                                title: 'Общественные'
                             }
                         ]
-                    each val in tabs
-                        a.ud-tabs__item(href=`#${val.course}`, class=val._class).js-link= val.title
+                    each val, i in tabs
+                        a.ud-tabs__item(href=`#course-${i+1}`).js-link= val.title
         .ud-scntsts__main
-            each val in tabs
+            each val, i in tabs
                 +scientists(
                     'Естественные науки',
                     [
@@ -73,5 +63,5 @@ mixin scntsts()
                         }
                     ],
                     true
-                ).ud-scntsts__course(class=val._class, id=val.course)._page
+                ).ud-scntsts__course(id=`course-${i+1}`)._page
         +scntsts-modal()

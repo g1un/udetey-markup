@@ -25,14 +25,18 @@ export default class Anchors {
         e.preventDefault();
         let linkHref = e.target.getAttribute('href');
         let anchor = document.querySelector(linkHref);
-        let pageScroll = window.pageYOffset;
-        let anchorTop = anchor.getBoundingClientRect().top;
+        if(anchor) {
+            let pageScroll = window.pageYOffset;
+            let anchorTop = anchor.getBoundingClientRect().top;
 
-        this.closeMenu();
+            this.closeMenu();
 
-        this.$body.animate(
-            {scrollTop: anchorTop + pageScroll - this.headerHeight}, 1000
-        )
+            this.$body.animate(
+                {scrollTop: anchorTop + pageScroll - this.headerHeight}, 1000
+            )
+        } else {
+            window.location.href = '/' + linkHref;
+        }
     }
 
     closeMenu() {

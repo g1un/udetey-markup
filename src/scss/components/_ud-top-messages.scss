@@ -1,0 +1,19 @@
+.ud-top-messages {
+    border-top: 1px solid #333;
+    background: #000;
+
+    &__item {
+        margin: 0 auto;
+        max-width: 980px;
+
+        p {
+            padding: 18px;
+            margin: 0;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-size: 14px;
+            line-height: 1.43;
+            color: #fff;
+            text-align: center;
+        }
+    }
+}

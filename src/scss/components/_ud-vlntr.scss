@@ -1,8 +1,14 @@
 .ud-vlntr {
+    margin-top: -65px;
+    padding: 0 0 82px;
+    background: #fff;
     @extend .txt-text-2;
 
+    @include lg() {
+        margin-top: 0;
+    }
+
     &__header {
-        margin-bottom: 25px;
         display: flex;
         justify-content: center;
         align-items: flex-end;
@@ -18,15 +24,15 @@
     }
 
     &__title {
-        padding: 0 10px 30px;
-        flex: 1 1 760px;
-        max-width: 760px;
+        padding: 0 20px 30px;
+        flex: 1 1 780px;
+        max-width: 780px;
     }
 
     &__main {
-        margin: 0 auto 82px;
-        padding: 0 10px;
-        max-width: 860px;
+        padding: 25px 20px 0;
+        margin: 0 auto;
+        max-width: 900px;
     }
 
     &__desc {

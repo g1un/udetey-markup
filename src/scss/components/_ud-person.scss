@@ -1,9 +1,12 @@
 .ud-person {
+    display: block;
+    padding: 0;
     border-radius: 3px;
     border: none;
     outline: none;
     background: none;
     cursor: pointer;
+    text-decoration: none;
 
     &:hover,
     &:focus {

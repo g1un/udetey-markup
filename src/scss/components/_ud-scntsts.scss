@@ -1,4 +1,9 @@
 .ud-scntsts {
+    margin-top: -65px;
+
+    @include lg() {
+        margin-top: 0;
+    }
 
     &__wrapper {
         margin: 0 auto;
@@ -11,8 +16,8 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        height: 577px;
-        background: url('http://placebeard.it/1280x577') no-repeat center center;
+        min-height: 577px;
+        background: url('~scientists-bg.jpg') no-repeat center center;
         background-size: cover;
     }
 
@@ -30,6 +35,11 @@
         @include md() {
             font-size: 15px;
             line-height: 1.4;
+        }
+        
+        a {
+            color: #fff;
+            text-decoration: underline;
         }
     }
 }

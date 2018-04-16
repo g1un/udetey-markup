@@ -24,23 +24,23 @@
             border: none;
         }
 
-        &._hippie-blue {
+        &[href='#course-1'] {
             background: $hippie-blue;
         }
 
-        &._blue-violet {
+        &[href='#course-2'] {
             background: $blue-violet;
         }
 
-        &._puerto-rico {
+        &[href='#course-3'] {
             background: $puerto-rico;
         }
 
-        &._orange {
+        &[href='#course-4'] {
             background: $orange;
         }
 
-        &._saffron {
+        &[href='#course-5'] {
             background: $saffron;
         }
     }
